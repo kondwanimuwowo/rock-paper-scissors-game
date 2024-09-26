@@ -46,6 +46,5 @@ function playGame() {
 
 for (let i = 0; i < 5; i++) {
   playGame();
-  console.log("Your Score: " + humanScore);
-  console.log("Computer Score " + computerScore);
+  console.log("Your Score: " + humanScore + "  Computer Score " + computerScore);
 }
