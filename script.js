@@ -1,4 +1,5 @@
-function getComputerChoice() {
+    let humanScore = 0;
+    let computerScore = 0;function getComputerChoice() {
     let result = (Math.floor(Math.random() * 3));
     if (result === 0) {
       return "rock";
@@ -11,12 +12,16 @@ function getComputerChoice() {
   
   function getHumanChoice() {
     let choice = prompt("Kindly enter your choice: Rock, Paper or Scissors").trim().toLowerCase();
+    if (choice !== "rock" && choice !== "paper" && choice !== "scissors") {
+      alert("Your entry was invalid. Kindly enter Rock, Paper, or Scissors");
+      getHumanChoice();
+    }
+    return choice;
   }
-  
+let humanScore = 0;
+let computerScore = 0;
+
   function playGame() {
-    let humanScore = 0;
-    let computerScore = 0;
-    
     function playRound(humanChoice, computerChoice) {
       let youWin = "You win: " + humanChoice + " beats " + computerChoice;
       let youLose = "Computer Wins: " + computerChoice + " beats " + humanChoice;
@@ -46,14 +51,12 @@ function getComputerChoice() {
         humanScore++;
       }
     }
-    console.log(humanScore);
     const humanSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
     
     playRound(humanSelection, computerSelection);
   }
 
-  let i = playGame();
-  for (let i = 1; i < 6 ; i++) {
-    
-  }
+for (let i = 0, i < 5, i++) {
+  playGame();
+}
